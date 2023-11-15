@@ -1,0 +1,15 @@
+<div><strong><%= @restaurant.name %></strong>
+  <%= link_to edit_restaurant_path(@restaurant) do %>
+    <i class="fa fa-pencil"></i>
+  <% end %>
+</div>
+<p><%= @restaurant.address %></p>
+<div><%= link_to "Back to list of restaurants", restaurants_path %></div>
+<div><%= link_to "Add review", new_restaurant_review_path(@restaurant)%></div>
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
